@@ -4,19 +4,19 @@ Implement Token-based Authentication with Golang and MySQL Server 👏👏👏
 
 ## Install this app
 
-Create the database in local
+1. Create the database in local
 ```
 user: "root"
 password: ""
 database name: "goblog"
 ```
 
-1. Clone this repository
+2. Clone this repository
 ```
 git clone https://github.com/hashi7412/tokenbased-authentication.git <dir_name>
 ```
 
-2. Download Golang packages that are used for this app
+3. Download Golang packages that are used for this app
 ```
 cd <dir_name>
 
@@ -25,12 +25,12 @@ go get github.com/go-sql-driver/mysql
 go get golang.org/x/crypto/bcrypt
 ```
 
-3. Run this app
+4. Run this app
 ```
 go run ./
 ```
 
-4. Test this app
+5. Test this app
 SSH to your server on another terminal
 
 Add an user to database
