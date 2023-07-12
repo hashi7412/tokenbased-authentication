@@ -110,7 +110,8 @@ This file has `dbConn()` function to connect database. If it has error, it will 
 In this repository, we've implemented token-based authentication with Golang and MySQL
 
 Here is some repositories for your guide:
-[Hands-on Go](https://github.com/hashi7412/handson-go)
-[CRUD with MySQL](https://github.com/hashi7412/crud-with-mysql)
+
+- [Hands-on Go](https://github.com/hashi7412/handson-go)
+- [CRUD with MySQL](https://github.com/hashi7412/crud-with-mysql)
 
 Thank you for looking at this repository. 👋
