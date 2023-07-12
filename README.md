@@ -5,11 +5,11 @@ Implement Token-based Authentication with Golang and MySQL Server
 ## Install this app
 
 ### Create the database in local
-`
+```
 user: "root"
 password: ""
 database name: "goblog"
-`
+```
 
 ### Clone this repository
 ```
