@@ -1,6 +1,6 @@
 # tokenbased-authentication
-Implement Token-based Authentication with Golang and MySQL Server
 
+Implement Token-based Authentication with Golang and MySQL Server 👏👏👏
 
 ## Install this app
 
@@ -91,4 +91,26 @@ The above file has a single `registerUser` function that inserts data into your 
 
 You've imported the `database/sql`, `github.com/go-sql-driver/mysql`, and `golang.org/x/crypto/bcrypt` packages to implement MySQL database and password hashing functions.
 
-### [authentications.go](https://github.com/hashi7412/tokenbased-authentication/blob/main/authentications.go)https://github.com/hashi7412/tokenbased-authentication/blob/main/authentications.go
+### [authentications.go](https://github.com/hashi7412/tokenbased-authentication/blob/main/authentications.go)
+
+In the `generateToken` function, you're accepting a `username` and a `password`. Then, you're running a `SELECT` statement against the `system_users` table to check if a record exists with that username. You're then using the statement `if err == sql.ErrNoRows {}` to determine if there is a matching row for the user. If the user doesn't exist, you're throwing an `Invalid username or password`. error. However, if there is a matching record, you're using the statement `bcrypt.CompareHashAndPassword([]byte(accountPassword), []byte(password))` to determine if the account's password and the supplied password match.
+
+Next, you're using `randomToken := make([]byte, 32)` and `_, err = rand.Read(randomToken)` statements to generate a random token for the user. You're later encoding the token to `base64` using the statement `base64.URLEncoding.EncodeToString(...)`. then, you're permanently saving the token to the authentication_tokens table.
+
+In the `validateToken` function, you're checking the provided token on the `authentication_tokens` table to see if there is a match. If the token is valid, you're returning detailed information about the token, including the matching user's details and token values. Otherwise, you're throwing an error to the calling function.
+
+You're using the statement if `expiryTime.Before(currentTime) {...}` to check if the token has expired.
+
+### [dbconn.go](https://github.com/hashi7412/tokenbased-authentication/blob/main/dbconn.go)
+
+This file has `dbConn()` function to connect database. If it has error, it will stop this program immediately with `panic` finction
+
+## Conclusion
+
+In this repository, we've implemented token-based authentication with Golang and MySQL
+
+Here is some repositories for your guide:
+[Hands-on Go](https://github.com/hashi7412/handson-go)
+[CRUD with MySQL](https://github.com/hashi7412/crud-with-mysql)
+
+Thank you for looking at this repository. 👋
